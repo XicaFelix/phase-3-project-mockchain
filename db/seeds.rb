@@ -1,3 +1,5 @@
+require 'faker'
+
 puts "🌱 Seeding spices..."
 
 # Seed your database here
@@ -20,12 +22,16 @@ puts "🌱 Seeding spices..."
             type: 'buy',
             quantity: rand(4..10),
             price: rand(1000..10000),
+            coin_id: coin.id,
+            user_id: user.id
         )
 
         Transaction.create(
             type: 'sell',
             quantity: rand(1..3),
-            price: rand(200..1000)
+            price: rand(200..1000),
+            coin_id: coin.id,
+            user_id: user.id
         )
     end
 end

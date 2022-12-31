@@ -36,7 +36,6 @@ has many Transactions
 - Attributes
     - t.string :name
     - t.integer :price (price of the coin)
-    - t.string :most_expensive (the most expensive coin)
     - t.integer :user_id
 
 
