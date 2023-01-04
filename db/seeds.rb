@@ -7,6 +7,8 @@ puts "🌱 Seeding spices..."
     # create Users
    user = User.create(
         name: Faker::Internet.user_name,
+        password: Faker::Internet.password(max_length:10),
+        avatar: Faker::Avatar.image,
         currency: Faker::Currency.name,
         cash: rand(5000..10000)
     )
