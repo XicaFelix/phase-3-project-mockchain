@@ -1,5 +1,8 @@
-class Coin_Transaction < ActiveRecord::Base
+class CoinTransaction < ActiveRecord::Base
     belongs_to :coin
-    has_many :users, through: :coins
+    belongs_to :user
+    # delegate :user, to: :coin, prefix: :coin
+    has_one :seller, through: :coin, :source => 'user'
+
 
 end

@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
     has_many :coins
-    has_many :cointransactions, through: :coins
+    has_many :coin_transactions, through: :coins
 
 end
