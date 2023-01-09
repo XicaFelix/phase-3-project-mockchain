@@ -8,7 +8,7 @@ class ApplicationController < Sinatra::Base
 
   get '/mockchain' do 
     output = User.all 
-    output.to_json
+    output.to_json(include: {coin_transactions: {include: :coin}})
   end
 
   get '/mockchain/coins' do
@@ -17,7 +17,7 @@ class ApplicationController < Sinatra::Base
   end
   # Gets all data through coin transactions
   get '/mockchain/transactions' do 
-    output = Coin_Transaction.all
+    output = CoinTransaction.all
     output.to_json(include: {seller: {include: :coins}})
   end
 
