@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
 
 import AppHeader from "./components/AppHeader";
@@ -8,21 +9,43 @@ import TransactionPage from "./components/TransactionPage";
 
 
 function App() {
+
+  // setting up state to fetch all app data
+  const[appData, setAppData] = useState([]);
+
+  // setting up state for current user & their info
+  const [currentUser, setCurrentUser] = useState([]);
+
+  //  setting up state for selected Transaction
+  const [selectedRecord, setSelectedRecord] = useState({
+    buyer: '',
+    record_id: 0,
+    coin: '',
+    price: 0,
+    currency: '',
+    seller: '',
+  })
+
+  // fetching all app data
+  useEffect(()=>{
+    fetch('http://localhost:9292/mockchain').then(resp=>resp.json()).then(data=>setAppData(data))
+  }, [])
+  
   return (
     <Switch>
        <Route path= '/home'>
-          <HomePage/>
+          <HomePage appData={appData} currentUser={currentUser} selectedRecord={selectedRecord} setSelectedRecord={setSelectedRecord}/>
         </Route>
         <Route path= '/profile'>
-          <ProfilePage/>
+          <ProfilePage appData={appData} currentUser={currentUser} selectedRecord={selectedRecord} setSelectedRecord={setSelectedRecord}/>
         </Route>
         <Route path={'/newtransaction'}>
-          <TransactionPage/>
+          <TransactionPage selectedRecord={selectedRecord} setSelectedRecord={setSelectedRecord} appData={appData}/>
         </Route>
       <Route path= '/'>
         <>
           <AppHeader/>
-          <LoginPage/>
+          <LoginPage appData={appData} currentUser={currentUser} setCurrentUser={setCurrentUser}/>
         </>
       </Route>
     </Switch>

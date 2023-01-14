@@ -9,10 +9,10 @@ CoinTransaction.destroy_all
 10.times do 
     # create Users
    user = User.create(
-        name: Faker::Internet.user_name,
+        name: Faker::Internet.unique.user_name,
         password: Faker::Internet.password(max_length:10),
-        avatar: Faker::Avatar.image,
-        currency: Faker::Currency.name,
+        avatar: Faker::Avatar.unique.image,
+        currency: Faker::Currency.unique.name,
         cash: rand(5000..10000)
     )
 
