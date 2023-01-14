@@ -25,4 +25,35 @@ class ApplicationController < Sinatra::Base
     user_data = User.find(params[:id])
     user_data.to_json(include: {coin_transactions: {include: :coin}})
   end
+
+  post '/mockchain/transactions/new' do 
+    record = CoinTransaction.create(
+      business_type: 'buy',
+      quantity: rand(4..10),
+      price: params[:price],
+      coin_id: params[:coin_id],
+      user_id: params[:user_id]
+    )
+
+    record.to_json
+  end
+
+  patch '/mockchain/transactions/:id' do 
+    record = CoinTransaction.find(params[:id])
+    record.update(
+      business_type: 'buy',
+      quantity: record.quantity,
+      price: params[:price],
+      coin_id: params[:coin_id],
+      user_id: params[:user_id]
+    )
+
+    record.to_json
+  end
+
+  delete '/mockchain/transactions/:id' do
+    record = CoinTransaction.find(params[:id])
+    record.destroy
+    record.to_json
+  end
 end
