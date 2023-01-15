@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Mockchain - A Fake Blockchain
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+This project was my attempt to replicate the behavior of the blockchain using Sinatra on the back-end and React on the front-end. In this project a user can login, see a log of all transactions across the mockchain, and visit a profile page with information relevant to their account. The profile page provides easy navigation to the following information: a user's transactions, the coins they own, as well as the amount of cash available to them. 
 
-## Available Scripts
+A user can not only view this information, they can also interact with it too. This application contains full CRUD functionality. A user is able to edit transactions before they have been executed, delete their personal transaction, create new transactions, and deposit more money into their account. 
 
-In the project directory, you can run:
+As mentioned above, the front-end of this application is built using React, with Semantic-Ui for styling, as well as internal CSS stylesheets for customization. On the backend, the database is built with Sinatra and Active Record. The front-end also features dynamic and programmatic routing to simulate the experience of using a production level application. 
 
-### `npm start`
+## Challenges
+This is the first full-stack application I have created, and thus it has been an eventful ride. My first challenge was on the back-end setting up the database in such a way that it lined up with the way I needed the data formatted on the front-end. I also found myself changing the back-end routes several times. The back-end data is some-what nested, which made it slightly more difficult to work with on the front-end. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+In the future I would like to improve styling, perhaps by creating a custom theme. I would also like to implement sign-up functionality, where a user can create an account, fund the acount, and invest in coins. I would also like to create the ability for a password recovery functionality. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## How to Install the Project
 
-### `npm test`
+### Back-end Setup
+1. Fork and clone the repo
+2. Bundle install all ruby gems and dependencies
+3. Use 'bundle exec rake server' to start the localhost server
+4. Get Coding!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Front-end Setup
+1. Fork and clone the repo
+2. npm install any dependencies
+3. Use 'npm start' to run the front-end on a different locallhost port
+4. Code!
 
-### `npm run build`
+## Helpful Tips
+-  You can find login-info in sqlite database under the users table or here:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+| id  | Username        | Password   |
+|-----|-----------------|------------|
+| 186 | martin          | FMrqicvThG |
+| 187 | leia            | RUNgGJMVV  |
+| 188 | meghan          | xzUiqCmty  |
+| 189 | art             | JvCslmqijV |
+| 190 | melita          | dpFAlCxNk  |
+| 191 | dwain           | LTiJNJgwH  |
+| 192 | lindsey.sawayn  | kzSlpCbCh  |
+| 193 | elliot.collier  | RVpAlCuM   |
+| 194 | earle           | bdnciTPsc  |
+| 195 | shayne.anderson | tzmPVKiJV  |
