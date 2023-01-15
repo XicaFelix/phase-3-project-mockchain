@@ -44,7 +44,7 @@ class ApplicationController < Sinatra::Base
       business_type: 'buy',
       quantity: record.quantity,
       price: params[:price],
-      coin_id: params[:coin_id],
+      coin_id: record.coin_id,
       user_id: params[:user_id]
     )
 
@@ -55,5 +55,18 @@ class ApplicationController < Sinatra::Base
     record = CoinTransaction.find(params[:id])
     record.destroy
     record.to_json
+  end
+
+  patch '/mockchain/:id' do 
+    user = User.find(params[:id])
+    user.update(
+      name: user.name,
+        password: user.password,
+        avatar: user.avatar,
+        currency: user.currency,
+        cash: params[:cash]
+    )
+
+    user.to_json
   end
 end

@@ -26,6 +26,9 @@ function App() {
     seller: '',
   })
 
+  // setting up state to determine whether cash form or coin form is displayed
+  const [displayForm, setDisplayForm] = useState(false)
+
   // fetching all app data
   useEffect(()=>{
     fetch('http://localhost:9292/mockchain').then(resp=>resp.json()).then(data=>setAppData(data))
@@ -34,13 +37,13 @@ function App() {
   return (
     <Switch>
        <Route path= '/home'>
-          <HomePage appData={appData} currentUser={currentUser} selectedRecord={selectedRecord} setSelectedRecord={setSelectedRecord}/>
+          <HomePage appData={appData} currentUser={currentUser} selectedRecord={selectedRecord} setSelectedRecord={setSelectedRecord} setDisplayForm={setDisplayForm}/>
         </Route>
         <Route path= '/profile'>
-          <ProfilePage appData={appData} currentUser={currentUser} selectedRecord={selectedRecord} setSelectedRecord={setSelectedRecord}/>
+          <ProfilePage appData={appData} currentUser={currentUser} selectedRecord={selectedRecord} setSelectedRecord={setSelectedRecord} setDisplayForm={setDisplayForm}/>
         </Route>
         <Route path={'/newtransaction'}>
-          <TransactionPage selectedRecord={selectedRecord} setSelectedRecord={setSelectedRecord} appData={appData}/>
+          <TransactionPage selectedRecord={selectedRecord} setSelectedRecord={setSelectedRecord} appData={appData} setCurrentUser={setCurrentUser} currentUser={currentUser} displayForm={displayForm} setDisplayForm={setDisplayForm}/>
         </Route>
       <Route path= '/'>
         <>

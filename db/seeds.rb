@@ -34,7 +34,7 @@ CoinTransaction.destroy_all
     end
 end
 
-33.times do 
+30.times do 
     count = User.count
     random_offset = rand(count)
     random_user = User.offset(random_offset).first
@@ -43,8 +43,8 @@ end
         business_type: 'buy',
         quantity: rand(4..10),
         price: rand(1000..10000),
-        coin_id: random_coin.id,
-        user_id: random_user.id
+        coin_id: Coin.all.sample.id,
+        user_id: User.all.sample.id
     )
 end
 puts "✅ Done seeding!"
