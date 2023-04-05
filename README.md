@@ -1,5 +1,12 @@
 # Mockchain - A Fake Blockchain
 
+## Demo
+
+
+https://user-images.githubusercontent.com/92950060/230121557-9d4f605f-e03d-4975-bc6a-b8b57f7cc2a1.mp4
+
+
+
 ## Description
 This project was my attempt to replicate the behavior of the blockchain using Sinatra on the back-end and React on the front-end. In this project a user can login, see a log of all transactions across the mockchain, and visit a profile page with information relevant to their account. The profile page provides easy navigation to the following information: a user's transactions, the coins they own, as well as the amount of cash available to them. 
 
@@ -26,18 +33,3 @@ In the future I would like to improve styling, perhaps by creating a custom them
 3. Use 'npm start' to run the front-end on a different locallhost port
 4. Code!
 
-## Helpful Tips
--  You can find login-info in sqlite database under the users table or here:
-
-| id  | Username        | Password   |
-|-----|-----------------|------------|
-| 186 | martin          | FMrqicvThG |
-| 187 | leia            | RUNgGJMVV  |
-| 188 | meghan          | xzUiqCmty  |
-| 189 | art             | JvCslmqijV |
-| 190 | melita          | dpFAlCxNk  |
-| 191 | dwain           | LTiJNJgwH  |
-| 192 | lindsey.sawayn  | kzSlpCbCh  |
-| 193 | elliot.collier  | RVpAlCuM   |
-| 194 | earle           | bdnciTPsc  |
-| 195 | shayne.anderson | tzmPVKiJV  |
